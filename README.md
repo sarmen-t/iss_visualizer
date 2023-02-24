@@ -1,6 +1,6 @@
 # ISS Location Visualizer
-#### Video Demo:  <URL HERE>
-#### Description:
+## Video Demo:  <URL HERE>
+## Description:
 
 Basic Python Turtle graphics applet to visualize location of ISS
 
