@@ -1,0 +1,23 @@
+import sqlite3
+from turtle import *
+
+
+data = sqlite3.connect("iss_loc.db")
+cur = data.cursor()
+screen = Screen()
+screen.setup(1600,800)
+screen.bgpic("map.gif")
+setworldcoordinates(-180,-90,180,90)
+screen.title("ISS Location Tracker")
+screen.tracer(0)
+screen.update()
+hist_data = cur.execute("SELECT * FROM iss_loc_data")
+hist_list = hist_data.fetchall()
+iss_dot = Turtle()
+iss_dot.penup()
+for x in hist_list:
+    iss_dot.goto(x[0],x[1])
+    iss_dot.pendown()
+    iss_dot.dot(5, "red")
+        
+screen.mainloop()
